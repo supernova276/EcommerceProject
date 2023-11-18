@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- <script async src="https://kit.fontawesome.com/0ff589d236.js" crossorigin="anonymous"></script> -->
+    <meta name="author" description="Akshita">
+    <title>Document</title>
+</head>
+<body>
+    <header class="heading d-flex grow-shrink-basis align-center fixed top-0 left-0">
+     <div class="heading-title-icon d-flex grow-shrink-basis align-center">
+       
+         <h1 class="heading-title">
+             <a class="link" href="/">EcommerceApp</a>
+         </h1>
+     </div>
+     <div class="search-container relative">
+          <input class="serach-box" placeholder="search products">
+          <span class="material-icons-outlined nav-icon absolute right-0">
+               search
+          </span>
+     </div>
+     <nav class="navigation">
+         <ul class="list-non-bullet d-flex align-center">
+             <!-- <li class="list-item-inline">
+                 <a href="/" class="link cursor">Home</a>
+             </li> -->
+             <li class="list-item-inline">
+                 <a href="/" class="link cursor">
+                    <span class="material-icons-outlined nav-icon">
+                         favorite_border
+                    </span>
+                 </a>
+             </li>
+             <li class="list-item-inline">
+                 <a href="./cart.html" class="link  d-flex align-end gap-sm cursor ">
+                    <span class="material-icons-outlined nav-icon">
+                         shopping_cart 
+                    </span>
+                 </a>
+             </li>
+         </ul>
+     </nav>
+ </header>
+ <div id="products" class="d-flex align wrap gap-prod products-page"></div>
+   <script type="module" src="./index.js"></script> 
+</body>
+</html>

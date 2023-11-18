@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Akshita" description="cart.html">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>cart for ecomProj</title>
+</head>
+<body>
+    <header class="heading d-flex grow-shrink-basis align-center fixed top-0 left-0">
+        <div class="heading-title-icon d-flex grow-shrink-basis align-center">
+          
+            <h1 class="heading-title">
+                <a class="link" href="/">EcommerceApp</a>
+            </h1>
+        </div>
+        <div class="search-container relative">
+             <input class="serach-box" placeholder="search products">
+             <span class="material-icons-outlined nav-icon absolute right-0">
+                  search
+             </span>
+        </div>
+        <nav class="navigation">
+            <ul class="list-non-bullet d-flex align-center">
+                <!-- <li class="list-item-inline">
+                    <a href="/" class="link cursor">Home</a>
+                </li> -->
+                <li class="list-item-inline">
+                    <a href="/" class="link cursor">
+                       <span class="material-icons-outlined nav-icon">
+                            favorite_border
+                       </span>
+                    </a>
+                </li>
+                <li class="list-item-inline">
+                    <a href="./cart.html" class="link  d-flex align-end gap-sm cursor ">
+                       <span class="material-icons-outlined nav-icon">
+                            shopping_cart
+                       </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="heading-2">your cart</h2>
+        <div class="products-page d-flex wrap gap" id="cart"></div>
+    </main>
+    <script type="module" src="./cart.js"></script>
+</body>
+</html>

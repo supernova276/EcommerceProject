@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta author="Akshita" description="cart.html">
+    <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>cart for ecomProj</title>
 </head>
 <body>
     <header class="heading d-flex grow-shrink-basis align-center fixed top-0 left-0">
@@ -31,7 +30,7 @@
                     <a href="/" class="link cursor">Home</a>
                 </li> -->
                 <li class="list-item-inline">
-                    <a href="./wishlist.html" class="link cursor">
+                    <a href="/" class="link cursor">
                        <span class="material-icons-outlined nav-icon">
                             favorite_border
                        </span>
@@ -48,34 +47,11 @@
         </nav>
     </header>
     <main class="main">
-        <h2 class="heading-2 d-flex justify-center">your cart</h2>
+        <h2 class="heading-2 d-flex justify-center">your wishlist</h2>
         <main class="d-flex gap justify-center">
-        <div class=" d-flex direction-column wrap gap" id="cart"></div>
-        <div class="final-price d-flex direction-column gap shadow padding-all-16">
-            <div>Price Details</div>
-            <div class="d-flex align-center justify-space-between">
-                <span>Price <span class="total-items"></span> items</span>
-                <span class="product-price">Rs 500</span>
-            </div>
-            <div class="d-flex align-center justify-space-between">
-                <span>Discount</span>
-                <span class="total-discount">Rs 1500</span>
-            </div>
-            <div class="d-flex align-center justify-space-between">
-                <span>Delivery charge</span>
-                <span>Rs 100</span>
-            </div>
-            <div class="d-flex align-center justify-space-between">
-                <span>Total Amount</span>
-                <span class="total">Rs 3600</span>
-            </div>
-            <div> you save Rs <span class="savings"></span> on this order</div>
-            <button class="button btn-primary cursor">
-                place order
-            </button>
-        </div>
+            <div class=" d-flex direction-column wrap gap" id="wishlist"></div>
+        </main>
     </main>
-</main>
-    <script type="module" src="./cart.js"></script>
+    <script type="module" src="./wishlist.js"></script>
 </body>
 </html>

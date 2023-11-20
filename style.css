@@ -96,3 +96,8 @@ justify-content: space-between;
 .star{
     color: rgb(199, 149, 12);
 }
+.heart{
+    position:relative;
+    top:-13.25rem;
+    right:-13.25rem;
+}

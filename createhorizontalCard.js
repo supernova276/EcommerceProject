@@ -126,6 +126,8 @@ export const createHorizontalCard=(products,parentElement)=>{
        "btn-margin"
      );
      saveBtn.innerText = "Save To Wishlist";
+     saveBtn.setAttribute("data-id",product._id)
+     saveBtn.setAttribute("data-type","wishlist")
      ctaButton.appendChild(removeBtn);
      ctaButton.appendChild(saveBtn);
      cardDetailsContainer.appendChild(ctaButton);

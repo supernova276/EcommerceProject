@@ -44,7 +44,14 @@
         prodImg.src=product.img
         imageContainer.appendChild(prodImg)
         productCard.appendChild(imageContainer)
-        
+
+        let heartContainer=document.createElement("p")
+        heartContainer.classList.add("material-icons-outlined" ,"nav-icon","heart", "cursor")
+        heartContainer.innerText= "favorite_border"
+        imageContainer.appendChild(heartContainer)
+        heartContainer.setAttribute("data-type","heart")
+        heartContainer.setAttribute("data-id",product._id)
+
         //card detaissssss
         
         let cardDetails=document.createElement("div");
@@ -98,6 +105,7 @@
         btn.classList.add("button","btn-primary","btn-icon","cart-btn","d-flex","align-center","justify-center","gap",
            "cursor","btn-margin")
            btn.setAttribute("data-id",product._id)
+           btn.setAttribute("data-type","add")
         
         cta_btn.appendChild(btn);
         let cartImage=document.createElement("span")

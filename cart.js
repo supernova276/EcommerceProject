@@ -3,6 +3,7 @@ import { createHorizontalCard } from "./createhorizontalCard.js";
 let cartElement=document.getElementById("cart")
 
 let cart=JSON.parse(localStorage.getItem("cart")) || [];
+let wishlist=JSON.parse(localStorage.getItem("wishlist")) || []
 let action;
 createHorizontalCard(cart,cartElement);
 
@@ -12,7 +13,7 @@ let action=e.target.dataset.type;
 let id=e.target.dataset.id;
 
 // console.log(cart)
-
+let currele;
 switch(action){
 
 case "remove" :
@@ -24,7 +25,7 @@ createHorizontalCard(cart,cartElement)
 break;
 
 case "inc" :
-    let currele=cart.filter(({_id})=>_id===id)[0]  //currele is an array although it contains only one thing
+     currele=cart.filter(({_id})=>_id===id)[0]  //currele is an array although it contains only one thing
     //so i have used the  based indexing to return the correct result
     currele.quantity+=1;
     cart=[...cart,currele];
@@ -34,13 +35,20 @@ case "inc" :
     break;
 
 case "dec":
-    let curr=cart.filter(({_id})=>_id===id)[0]  //currele is an array although it contains only one thing
+     currele=cart.filter(({_id})=>_id===id)[0]  //currele is an array although it contains only one thing
     //so i have used the  based indexing to return the correct result
-    curr.quantity=curr.quantity>0?curr.quantity-1:curr.quantity;
-    cart=[...cart,curr];
+    currele.quantity=curr.quantity>0?currele.quantity-1:currele.quantity;
+    cart=[...cart,currele];
     cartElement.innerHTML="";   //this will update the result in realtime
     localStorage.setItem("cart",JSON.stringify(cart))
     createHorizontalCard(cart,cartElement)
+    break;
+
+case "wishlist":
+    currele=cart.filter(({_id})=>_id===id)[0]
+    wishlist=[...wishlist,currele]
+    localStorage.setItem("wishlist",JSON.stringify(wishlist))
+    
 }
     })
 

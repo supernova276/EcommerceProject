@@ -6,18 +6,21 @@ let productElement=document.getElementById("products")
 const filterContainer=document.querySelector(".side-bar")
 
 let cart=JSON.parse((localStorage.getItem("cart"))) || [];
+let wishlist=JSON.parse(localStorage.getItem("wishlist"))||[];
  productElement.addEventListener("click",(e)=>{
+  
+  let action=e.target.dataset.type;
+
+  switch(action){
+
+  case "add":
  const isProductInCart=findProduct(cart,e.target.dataset.id);
  const cartbutton=e.target;
  if(!isProductInCart){
     
  const  productsAddtoCart=products.filter(({_id})=>_id===e.target.dataset.id)   //this will give one product at a time
  cart=[...cart,...productsAddtoCart];
- 
- console.log(typeof productsAddtoCart)
-
  localStorage.setItem("cart",JSON.stringify(cart))
- console.log("hello")
  cartbutton.innerHTML="go to cart <span class='material-icons-outlined'>shopping_cart </span>"
  }
  else{
@@ -25,7 +28,25 @@ let cart=JSON.parse((localStorage.getItem("cart"))) || [];
  }
    //it means all the prev itmes of the cart and also add productstocart
 //  console.log(cart,cart[0]._id)
-})
+break;
+
+case "heart":
+
+ const isProductInWishlist=findProduct(wishlist,e.target.dataset.id);
+ if(!isProductInWishlist){
+    
+const  productsAddtoWishList=products.filter(({_id})=>_id===e.target.dataset.id)   //this will give one product at a time
+    wishlist=[...wishlist,...productsAddtoWishList];
+     e.target.style="color:red"
+
+     localStorage.setItem("wishlist",JSON.stringify(wishlist))
+  }
+  else{
+    e.target.style="color:none";
+    //remove from wishlist
+  }
+
+}})
 createProductCard(products,productElement,findProduct,"products")
 
 filterContainer.addEventListener("click",(e)=>{

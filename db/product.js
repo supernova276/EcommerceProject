@@ -13,6 +13,7 @@ export const products = [
       size: "L",
       idealFor: "M",
       rating: 4.2,
+      quantity:1
     },
     {
       _id: "002",
@@ -26,6 +27,7 @@ export const products = [
       size: "M",
       idealFor: "W",
       rating: 4.5,
+      quantity:1
     },
     {
       _id: "003",
@@ -39,6 +41,7 @@ export const products = [
       size: "L",
       idealFor: "W",
       rating: 3.9,
+      quantity:1
     },
     {
       _id: "004",
@@ -52,6 +55,7 @@ export const products = [
       size: "XL",
       idealFor: "M",
       rating: 3.5,
+      quantity:1
     },
     {
       _id: "005",
@@ -65,6 +69,7 @@ export const products = [
       size: "M",
       idealFor: "M",
       rating: 3.2,
+      quantity:1
     },
     {
       _id: "006",
@@ -78,6 +83,7 @@ export const products = [
       size: "S",
       idealFor: "W",
       rating: 3.2,
+      quantity:1
     },
     {
       _id: "007",
@@ -91,6 +97,7 @@ export const products = [
       size: "XXL",
       idealFor: "M",
       rating: 2.2,
+      quantity:1
     },
     {
       _id: "008",
@@ -104,6 +111,7 @@ export const products = [
       size: "XXL",
       idealFor: "W",
       rating: 2.2,
+      quantity:1
     },
     {
       _id: "009",
@@ -117,5 +125,6 @@ export const products = [
       size: "S",
       idealFor: "W",
       rating: 2.2,
+      quantity:1
     },
   ];

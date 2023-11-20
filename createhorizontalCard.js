@@ -1,4 +1,5 @@
-export const createHorizontalCard=(products,parentElement,integerValue)=>{
+export const createHorizontalCard=(products,parentElement)=>{
+
     for(let product of products){
 
     const cardContainer=document.createElement("div")
@@ -6,6 +7,7 @@ export const createHorizontalCard=(products,parentElement,integerValue)=>{
     "d-flex", "shadow")
 
      /** Image Container */
+     cardContainer.setAttribute("data-id",product._id)
      const imageContainer = document.createElement("div");
      imageContainer.classList.add("card-hori-image-container", "relative");
  
@@ -69,15 +71,16 @@ export const createHorizontalCard=(products,parentElement,integerValue)=>{
      const quantity = document.createElement("div");
      quantity.classList.add("count-container", "d-flex", "align-center", "gap");
      const incBtn = document.createElement("button");
-     incBtn.setAttribute("data-id","add")
+     incBtn.setAttribute("data-id",product._id)
+     incBtn.setAttribute("data-type","inc")
      incBtn.classList.add("count");
      incBtn.innerText = "+";
      const value = document.createElement("span");
      value.classList.add("count-value");
-     console.log(integerValue)
-    value.innerText=integerValue;
+     value.innerText=`${product.quantity}`
      const decBtn = document.createElement("button");
-     decBtn.setAttribute("data-id","sub")
+     decBtn.setAttribute("data-id",product._id)
+     decBtn.setAttribute("data-type","dec")
      decBtn.classList.add("count");
      decBtn.innerText = "-";
  
@@ -92,6 +95,8 @@ export const createHorizontalCard=(products,parentElement,integerValue)=>{
      const ctaButton = document.createElement("div");
      ctaButton.classList.add("cta-btn", "d-flex", "gap");
      const removeBtn = document.createElement("button");
+     removeBtn.setAttribute("data-type","remove")
+     removeBtn.setAttribute("data-id",product._id)
      removeBtn.classList.add(
        "button",
        "hori-btn",
@@ -104,7 +109,7 @@ export const createHorizontalCard=(products,parentElement,integerValue)=>{
        "cursor",
        "btn-margin"
      );
-     removeBtn.setAttribute("data-id", product._id);
+    //  removeBtn.setAttribute("data-id", product._id);
      removeBtn.innerText = "Remove";
  
      const saveBtn = document.createElement("button");

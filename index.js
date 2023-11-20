@@ -11,8 +11,9 @@ let cart=JSON.parse((localStorage.getItem("cart"))) || [];
  const cartbutton=e.target;
  if(!isProductInCart){
     
- const  productsAddtoCart=products.filter(({_id})=>_id===e.target.dataset.id)
+ const  productsAddtoCart=products.filter(({_id})=>_id===e.target.dataset.id)   //this will give one product at a time
  cart=[...cart,...productsAddtoCart];
+ 
  console.log(typeof productsAddtoCart)
 
  localStorage.setItem("cart",JSON.stringify(cart))
@@ -26,3 +27,7 @@ let cart=JSON.parse((localStorage.getItem("cart"))) || [];
 //  console.log(cart,cart[0]._id)
 })
 createProductCard(products,productElement,findProduct,"products")
+
+
+
+// arrayOfNotes=arrayOfNotes.map(note=>note.id.toString()===noteId?{...note,isPinned:!note.isPinned}:note)

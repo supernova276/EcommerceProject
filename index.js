@@ -43,6 +43,8 @@ const  productsAddtoWishList=products.filter(({_id})=>_id===e.target.dataset.id)
   }
   else{
     e.target.style="color:none";
+    wishlist=wishlist.filter(({_id})=>_id!==e.target.dataset.id)
+    localStorage.setItem("wishlist",JSON.stringify(wishlist))
     //remove from wishlist
   }
 

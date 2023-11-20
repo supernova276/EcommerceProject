@@ -4,7 +4,7 @@ let cartElement=document.getElementById("cart")
 
 let cart=JSON.parse(localStorage.getItem("cart")) || [];
 let wishlist=JSON.parse(localStorage.getItem("wishlist")) || []
-let action;
+
 createHorizontalCard(cart,cartElement);
 
 cartElement.addEventListener("click",(e)=>{
@@ -27,8 +27,9 @@ break;
 case "inc" :
      currele=cart.filter(({_id})=>_id===id)[0]  //currele is an array although it contains only one thing
     //so i have used the  based indexing to return the correct result
+    cart=cart.filter(({_id})=>_id!==id)
     currele.quantity+=1;
-    cart=[...cart,currele];
+    cart=[currele,...cart];
     cartElement.innerHTML="";   //this will update the result in realtime
     localStorage.setItem("cart",JSON.stringify(cart))
     createHorizontalCard(cart,cartElement)
@@ -37,8 +38,9 @@ case "inc" :
 case "dec":
      currele=cart.filter(({_id})=>_id===id)[0]  //currele is an array although it contains only one thing
     //so i have used the  based indexing to return the correct result
-    currele.quantity=curr.quantity>0?currele.quantity-1:currele.quantity;
-    cart=[...cart,currele];
+    cart=cart.filter(({_id})=>_id!==id)
+    currele.quantity=currele.quantity>0?currele.quantity-1:currele.quantity;
+    cart=[currele,...cart];
     cartElement.innerHTML="";   //this will update the result in realtime
     localStorage.setItem("cart",JSON.stringify(cart))
     createHorizontalCard(cart,cartElement)

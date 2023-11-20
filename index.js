@@ -3,7 +3,7 @@ import { createProductCard } from "./createProduct.js";
 import { findProduct } from "./utils/findProduct.js";
 
 let productElement=document.getElementById("products")
-console.log(products)
+const filterContainer=document.querySelector(".side-bar")
 
 let cart=JSON.parse((localStorage.getItem("cart"))) || [];
  productElement.addEventListener("click",(e)=>{
@@ -28,6 +28,8 @@ let cart=JSON.parse((localStorage.getItem("cart"))) || [];
 })
 createProductCard(products,productElement,findProduct,"products")
 
-
-
-// arrayOfNotes=arrayOfNotes.map(note=>note.id.toString()===noteId?{...note,isPinned:!note.isPinned}:note)
+filterContainer.addEventListener("click",(e)=>{
+  const updateProducts=products.filter(({rating})=>rating>=Number(e.target.dataset.rating));
+  productElement.innerText="";
+  createProductCard(updateProducts,productElement,findProduct,"products")
+})

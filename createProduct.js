@@ -76,6 +76,20 @@
         prodDiscnt.innerText=`${product.discount} % Off`
         prodPrice.appendChild(prodDiscnt);
         
+        const ratings = document.createElement("p");
+        ratings.classList.add("d-flex", "align-center");
+    
+        const rating = document.createElement("span");
+        rating.innerText = product.rating;
+        ratings.appendChild(rating);
+
+       const star = document.createElement("span");
+       star.classList.add("material-icons-outlined", "star");
+       star.innerText = "star";
+       ratings.appendChild(star);
+       cardDes.appendChild(ratings);
+      //  cardDetailsContainer.appendChild(descriptionContainer);
+        
         let cta_btn=document.createElement("div");
         cta_btn.classList.add("cta-btn")
         productCard.appendChild(cta_btn)

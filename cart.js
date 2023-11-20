@@ -42,5 +42,19 @@ case "dec":
     localStorage.setItem("cart",JSON.stringify(cart))
     createHorizontalCard(cart,cartElement)
 }
-
     })
+
+let total_items=document.querySelector(".total-items")
+total_items.innerText=cart.length;
+let product_price=document.querySelector(".product-price")
+let productPrice=cart.reduce((acc,curr)=>acc+curr.oldPrice * curr.quantity,0)
+product_price.innerText=`${productPrice}`
+let total_discount=document.querySelector(".total-discount")
+
+let totalDis=cart.reduce((acc,curr)=>acc+(curr.oldPrice-curr.newPrice * curr.quantity),0)
+total_discount.innerText=`${totalDis}`
+let total=document.querySelector(".total");
+total.innerText=productPrice-totalDis+100;
+
+let savings=document.querySelector(".savings")
+savings.innerText=`${totalDis}`

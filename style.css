@@ -57,3 +57,42 @@
 .serach-box:focus{
     outline:none; 
 }
+.main{
+    padding-top:8rem;
+}
+.final-price{
+    width:25rem;
+    background-color: var(--background-color);
+    align-self:flex-start;
+}
+.justify-space-between{
+justify-content: space-between;
+}
+.heading{
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
+}
+.side-bar{
+    width:20rem;
+    position: fixed;
+
+}
+.product-container{
+    margin-left:21rem;
+}
+.label{
+    font-size:1.25rem;
+}
+.radio{
+    width:1.25rem;
+    height:1.25rem;
+}
+.filter-container{
+    padding: 1rem 0
+}
+.heading-3{
+    padding:10px 0;
+}
+.star{
+    color: rgb(199, 149, 12);
+}
